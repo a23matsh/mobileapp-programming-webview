@@ -1,17 +1,26 @@
 package com.example.webviewapp;
 
 import android.os.Bundle;
+import android.webkit.WebView;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebViewClient;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+
+
 public class MainActivity extends AppCompatActivity {
+     WebView myWebView;
+
 
     public void showExternalWebPage(){
-        // TODO: Add your code for showing external web page here
+
+        myWebView.loadUrl("https://his.se");
     }
 
     public void showInternalWebPage(){
@@ -24,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        myWebView = findViewById(R.id.activity_Main_page);
+        myWebView.setWebViewClient(new WebViewClient()); // Do not open in Chrome!
+
+
+
+
+    }
 
         /*
         * Rename your App. Tip: Values->Strings
@@ -49,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
            showing your App. One (1) screenshot showing your internal web page and
            one (1) screenshot showing your external web page.
         */
-    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -67,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_external_web) {
-            Log.d("==>","Will display external web page");
+            showExternalWebPage();
             return true;
         }
 

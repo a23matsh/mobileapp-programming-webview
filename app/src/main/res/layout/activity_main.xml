@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
@@ -27,7 +28,7 @@
 
 
     <WebView
-        android:id="@+id/activity_main_webview"
+        android:id="@+id/activity_Main_page"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
