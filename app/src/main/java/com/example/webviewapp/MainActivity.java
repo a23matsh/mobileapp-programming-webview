@@ -15,7 +15,7 @@ import androidx.appcompat.widget.Toolbar;
 
 
 public class MainActivity extends AppCompatActivity {
-     WebView myWebView;
+     private WebView myWebView;
 
 
     public void showExternalWebPage(){
