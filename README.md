@@ -1,9 +1,40 @@
 
 # Rapport
+First I renamed my app by changing app_name in strings.xml. Then I enabled internet by going into AndroidManifest.xml
+and adding the line of code <uses-permission android:name="android.permission.INTERNET" />. Then I replaced the existing TextView 
+in activity_main_xml and created a webview element and named it "Main page". Then I enabled javascript execution 
+"myWebView.getSettings().setJavaScriptEnabled(true);". Then I added a html page "about.html"
 
-**Skriv din rapport här!**
+The following code snippet demonstrates how the user selections are made. The line int id = item.getItemId(); allows the application to retrieve the unique identifier i.e. which menu item was chosen.
+Then there is 2 if statements one that checks for the external web page choice and one for the internal which are launched based on the choice made. If none of these are made the method calls the
+default action.
 
-_Du kan ta bort all text som finns sedan tidigare_.
+@Override
+public boolean onOptionsItemSelected(MenuItem item) {
+    int id = item.getItemId();
+
+    if (id == R.id.action_external_web) {
+        showExternalWebPage();
+        return true;
+    }
+
+    if (id == R.id.action_internal_web) {
+        showInternalWebPage();
+        return true;
+    }
+
+    return super.onOptionsItemSelected(item);
+}
+
+For example when the external page choice is made this line of code determines what is shown and in my case it's the HIS web page and the screenshot showing the execution
+is attached as "External page.png".
+
+public void showExternalWebPage(){
+    myWebView.loadUrl("https://his.se");
+}
+
+
+
 
 ## Följande grundsyn gäller dugga-svar:
 
@@ -33,7 +64,8 @@ function errorCallback(error) {
 
 Bilder läggs i samma mapp som markdown-filen.
 
-![](android.png)
+![](External page.png)
+![](Internal page.png)
 
 Läs gärna:
 
