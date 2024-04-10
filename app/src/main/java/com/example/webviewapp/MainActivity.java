@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         myWebView = findViewById(R.id.activity_Main_page);
         myWebView.setWebViewClient(new WebViewClient()); // Do not open in Chrome!
 
+        myWebView.getSettings().setJavaScriptEnabled(true);
+
 
 
 
