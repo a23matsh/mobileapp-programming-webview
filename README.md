@@ -64,8 +64,8 @@ function errorCallback(error) {
 
 Bilder läggs i samma mapp som markdown-filen.
 
-![](External page.png)
-![](Internal page.png)
+![](Externalpage.png)
+![](Internalpage.png)
 
 Läs gärna:
 
